@@ -54,9 +54,9 @@ public class ArrayHeap<T> extends ArrayBinaryTree<T> implements HeapADT<T>
    //================================================================
    public T removeMin() throws EmptyCollectionException 
    {
-       tree[0] = null;
+       tree[1] = null;
        heapifyRemove();
-       return tree[0];
+       return tree[1];
    }  // method removeMin
    
 
@@ -114,7 +114,8 @@ public class ArrayHeap<T> extends ArrayBinaryTree<T> implements HeapADT<T>
    //================================================================
    public T findMin() throws EmptyCollectionException {
 
-       return tree[0];
+       if(isEmpty()) throw new EmptyCollectionException("Heap is empty");
+       else return tree[1];
        
    }  // method findMin
 
